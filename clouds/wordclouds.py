@@ -4,16 +4,16 @@ import pandas as pd
 from matplotlib import pyplot as plt 
 from wordcloud import WordCloud
 
-with open('/Users/mattjohnson/Desktop/Lab_Term_Project/clouds/affected_tweets.pkl', 'rb') as f:
+with open('/Users/mattjohnson/Desktop/Term_Project/tweets/affected_tweets_clean.pkl', 'rb') as f:
 	affected_tweets = pickle.load(f)
 
-with open('/Users/mattjohnson/Desktop/Lab_Term_Project/clouds/minor_tweets.pkl', 'rb') as f:
+with open('/Users/mattjohnson/Desktop/Term_Project/tweets/minor_tweets_clean.pkl', 'rb') as f:
 	minor_tweets = pickle.load(f)
 
-with open('/Users/mattjohnson/Desktop/Lab_Term_Project/clouds/major_tweets.pkl', 'rb') as f:
+with open('/Users/mattjohnson/Desktop/Term_Project/tweets/major_tweets_clean.pkl', 'rb') as f:
 	major_tweets = pickle.load(f)
 
-with open('/Users/mattjohnson/Desktop/Lab_Term_Project/clouds/destroyed_tweets.pkl', 'rb') as f:
+with open('/Users/mattjohnson/Desktop/Term_Project/tweets/destroyed_tweets_clean.pkl', 'rb') as f:
 	destroyed_tweets = pickle.load(f)
 
 # plots word cloud
@@ -28,10 +28,10 @@ def plot_word_cloud(list_of_tweets, file_name):
 
 
 
-plot_word_cloud(affected_tweets, 'affected_wordcloud.png')
+plot_word_cloud(affected_tweets, '/Users/mattjohnson/Desktop/Term_Project/affected_wordcloud.png')
 
-plot_word_cloud(minor_tweets, 'minor_wordcloud.png' )
+plot_word_cloud(minor_tweets, '/Users/mattjohnson/Desktop/Term_Project/minor_wordcloud.png' )
 
-plot_word_cloud(major_tweets, 'major_wordcloud.png')
+plot_word_cloud(major_tweets, '/Users/mattjohnson/Desktop/Term_Project/major_wordcloud.png')
 
-plot_word_cloud(destroyed_tweets, 'destroyed_wordcloud.png')
+plot_word_cloud(destroyed_tweets, '/Users/mattjohnson/Desktop/Term_Project/destroyed_wordcloud.png')

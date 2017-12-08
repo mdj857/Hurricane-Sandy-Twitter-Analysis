@@ -13,9 +13,6 @@ from matplotlib import pyplot as plt
 from sklearn.feature_extraction.text import TfidfVectorizer
 from gensim import corpora, models, similarities 
 from collections import defaultdict
-import logging
-logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
-
 
 with open('/Users/mattjohnson/Desktop/Term_Project/tweets/affected_tweets_clean.pkl', 'rb') as f:
 	affected_tweets = pickle.load(f)
@@ -93,4 +90,13 @@ Curiously, the second element gets the vast majority of its collective
 'damage', 'insurance', or 'FEMA' 
 
 ''' 
+#%%
+#index the corpus
+gas_tweet = "Out of gas"
+gas_tweet_vec = dictionary.doc2bow(gas_tweet.lower().split())
+gas_tweet_vec = lsi[gas_tweet_vec]
+index = similarities.MatrixSimilarity(corpus_lsi)
 
+similarities = index[gas_tweet_vec] # list of tuples in form of (docnumber, sim_score) 
+similarities = sorted(enumerate(similarities), key = lambda item: -item[1])
+print type(index)

@@ -75,10 +75,10 @@ corpus_tfidf = tfidf[corpus]
 
 # Latent Semantic Indexing 
 # convert to latent space in R^2
-lsi = models.LsiModel(corpus_tfidf, id2word=dictionary, num_topics=2)
+lsi = models.LsiModel(corpus_tfidf, id2word=dictionary, num_topics=3)
 corpus_lsi = lsi[corpus_tfidf]
 #%%
-lsi.print_topics(2)
+lsi.print_topics(3)
 '''
 yields: 
     [(0, u'0.366*"power" + 0.221*"no" + 0.200*"on" + 0.199*"still" + 0.198*"have" + 0.186*"hurricane" + 0.161*"you" + 0.151*"out" + 0.147*"gas" + 0.137*"got"'), 

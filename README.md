@@ -1,4 +1,4 @@
-## What if 140 characters could save lives? 
+## *What if 140 characters could save lives?* 
 
 ## Motivation
 
@@ -29,8 +29,7 @@ For our damage analysis, we used data from FEMA’s post-disaster survey of 300,
 | Minor | Solid structures sustain exterior damage (e.g., missing roofs or roof segments); some mobile homes and light structures are destroyed, many are damaged or displaced. |
 | Major | Some solid structures are destroyed; most sustain exterior and interior damage (roofs missing, interior walls exposed); most mobile homes and light structures are destroyed. Extensive structural damage from storm surge. |
 | Destroyed | Most solid and all light or mobile home structures destroyed. Structure has been completely destroyed or washed away from storm surge. |
-
-### Adapted from https://data.femadata.com/MOTF/Hurricane_Sandy/FEMA%20MOTF-Hurricane%20Sandy%20Products%20ReadME%20FINAL.pdf
+###### Adapted from https://data.femadata.com/MOTF/Hurricane_Sandy/FEMA%20MOTF-Hurricane%20Sandy%20Products%20ReadME%20FINAL.pdf
 
 
 

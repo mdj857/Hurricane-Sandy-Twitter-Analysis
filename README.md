@@ -1,8 +1,11 @@
 ## *What if 140 characters could save lives?* 
 
 Matthew Johnson
+
 Javier Zepeda 
+
 Ronald MacMaster 
+
 Matthew Edwards
 
 ## Motivation
@@ -107,7 +110,7 @@ Naturally, there are many ways to encode _D_. Here are three:
 
 After we've constructed dense vector representations of tweet text, we were able to easily feed these vectors into a machine learning model.
 
-## ## Our first attempt: A simple model with Keras tweet embedding
+## Our first attempt: A simple model with Keras tweet embedding
 
 For our first model, we elected to use a simple tokenizer API native to Keras to embed the tweets as vectors. Essentially, the tokenizer yielded a one-hot-encoded 1.8 million tweet x 1000 token matrix (only including the top 1000 most frequently occuring tokens). This was very similar to the bag of words approach described above. Then, we fed the encoded matrix into a simple sequential neural network with three hidden layers, scaling down the size of the input roughly in half at each stage. Below is a graphic displaying the simple model's architecture. 
 
@@ -139,6 +142,7 @@ Have questions? Comments? Please feel free to contact us or check out our Github
 https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis
 
 mjohnson082396 at utexas.edu
+
 javier.t.zepeda at utexas.edu
 
 

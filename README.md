@@ -1,5 +1,10 @@
 ## *What if 140 characters could save lives?* 
 
+Matthew Johnson
+Javier Zepeda 
+Ronald MacMaster 
+Matthew Edwards
+
 ## Motivation
 
 The 2017 Atlantic hurricane season was one of the most active hurricane seasons in over a decade. Not since the mid-2000s had the Atlantic churned out hurricanes with such frequency and intensity. Hurricanes Harvey, Irma, and Maria ravaged through large swaths of the southeast United States and Puerto Rico, causing significant spikes in buzz on Twitter in the process. The presence of a vast wealth of textual and geographical information available on Twitter coupled with the spikes in social media buzz during the events provided the basis for a very fundamental question: given a tweet from the areas affected during Hurricane Sandy, is it possible to predict the level of damage for that specific area?
@@ -102,29 +107,42 @@ Naturally, there are many ways to encode _D_. Here are three:
 
 After we've constructed dense vector representations of tweet text, we were able to easily feed these vectors into a machine learning model.
 
-## Model Architecture
+## ## Our first attempt: A simple model with Keras tweet embedding
 
-For our first model, we elected to bypass the Doc2Vec embedding entirely and use a simple tokenizer API native to Keras. Essentially, the tokenizer yielded a one-hot-encoded 1.8 million tweet x 1000 token matrix (only including the top 1000 most frequently occuring tokens). This was very similar to the bag of words approach described above. Then, we fed the encoded matrix into a simple sequential neural network with three hidden layers, scaling down the size of the input roughly in half at each stage. Below is a graphic displaying the simple model's architecture. 
+For our first model, we elected to use a simple tokenizer API native to Keras to embed the tweets as vectors. Essentially, the tokenizer yielded a one-hot-encoded 1.8 million tweet x 1000 token matrix (only including the top 1000 most frequently occuring tokens). This was very similar to the bag of words approach described above. Then, we fed the encoded matrix into a simple sequential neural network with three hidden layers, scaling down the size of the input roughly in half at each stage. Below is a graphic displaying the simple model's architecture. 
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/simple_model.png "Simple Model Architecture")
 
+## Our second attempt: A custom deep network with custom tweet embedding
+
+The deep network's input layer receives a 200-dimensional topic vector from a latent semantic index (LSI) embedding described above. The early hidden layers reduce the previous layer size by half until reaching a size of 10. Next, the deep layers learn complex nonlinear relationships between the earlier learned hidden features. There are 20 deep hidden layers, each of size 10. All of the hidden layers use a ReLU activation function. The output layer of the network outputs a classification probability for each of the five categories with a softmax activation function. 
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/model_architecture.png "Model Architecture")
 
-The network's input layer receives a 200-dimensional topic vector from a latent semantic index (LSI) embedding. The early hidden layers reduce the previous layer size by half until reaching a size of 10. Next, the deep layers learn complex nonlinear relationships between the earlier learned hidden features. There are 20 deep hidden layers, each of size 10. All of the hidden layers use a ReLU activation function. The output layer of the network outputs a classification probability for each of the five categories with a softmax activation function.
-
 ## Empirical Results
 
-![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/empirical_results.png "Deep Topics Network Results")
+So... what does all of this mean? 
 
-We achieved a classification accuracy of 88%. This is a good result because predicting that all tweets are members of the most numerous category would result in a 70% classification accuracy.
+Using our simple model with the default Keras tweet embedding, we achieved a 71% validation accuracy which is only slightly better than classifying based on the frequency of classifications in the data (just classifying all tweets as "unknown"). 
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/simple_results.png "Simple BOW Network Results")
 
-Using the Keras default architecture, we achieved a 71% classification accuracy which is only slightly better than classifying based on the frequency of classifications in the data.
+Fortunately, our custom embedding and complex network architecture paid off! We were able to reach a validation accuracy of 88%--much better than our previous model. Our deep learning model was able to learn the nonlinear relationships between the LSI-embedded tweets and their respective damage classifications pretty well!
+
+![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/empirical_results.png "Deep Topics Network Results")
 
 
-# References: 
+## Contact Us
+
+Have questions? Comments? Please feel free to contact us or check out our Github repository for this project. 
+
+https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis
+
+mjohnson082396 at utexas.edu
+javier.t.zepeda at utexas.edu
+
+
+## References: 
 [1] http://dx.doi.org/10.5061/dryad.15fv2
 
 [2] https://data.femadata.com/MOTF/

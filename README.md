@@ -1,5 +1,9 @@
 # EE379K_Term_Project
-Term Project for EE379k
+
+
+# 1. Motivation
+
+We started this project because. 
 
 
 Hi

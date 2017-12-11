@@ -92,11 +92,13 @@ There are a couple of advantages to the Doc2Vec approach. The first is that the 
 
 Naturally, there are many ways to encode _D_. Here are three: 
 
-**Bag of words:** This is the simplest encoding. _D<sub>ij</sub>_ simply contains the number of times the word _i_ occurs in document _j_. Naturally, this skews the embedding towards words that appear more frequently. 
+**Bag of words:** This is the simplest encoding. _D<sub>ij</sub>_ simply contains the number of times the word _i_ occurs in document _j_. Naturally, this skews the embedding towards words that appear more frequently. Additionally, this encoding can create very large and sparse vectors for large datasets. Each tweet would be defined as a vector with size equal to the number of unique words in the entire dataset!
 
-**Term-Frequency-Inverse-Document-Frequency (tf-idf):** In essence, tf-idf is identical to the bag-of-words approach but with a key difference. _D<sub>ij</sub>_ still contains the frequency of the word _i_ in document _j_, but normalized over the number of times _i_ appears in the entire set of documents (all of the columns of _D_) 
+**Term-Frequency-Inverse-Document-Frequency (tf-idf):** In essence, tf-idf is identical to the bag-of-words approach but with a key difference. _D<sub>ij</sub>_ still contains the frequency of the word _i_ in document _j_, but normalized over the number of times _i_ appears in the entire set of documents (all of the columns of _D_). However, the vectors are still rather large. When transforming our tweets, they were each represented as a vector of size ~40,000.
 
-**Latent Semantic Indexing (LSI):**: Because _D_ might become pretty large when working with large sets of text (like our tweets!), it’d be pretty useful to have a _low-rank-approximation_ of _D_. A _low-rank_approximation_ is a low-dimensional representation of something that exists in high dimensions. This process is used frequently in image compression. Latent Semantic Indexing is exactly a low-rank approximation of the term-document matrix _D_ encoded with tf-idf (detailed above)! As it turns out, this encoding is pretty useful to feed into machine learning models.
+**Latent Semantic Indexing (LSI):** Because _D_ might become pretty large when working with large sets of text (like our tweets!), it’d be pretty useful to have a _low-rank_ _approximation_ of _D_. A _low-rank_ _approximation_ is representation of something where you remove non-essential information. This process is used frequently in image compression. Latent Semantic Indexing is exactly a low-rank approximation of the term-document matrix _D_ encoded with tf-idf (detailed above)! As it turns out, this encoding was pretty useful to feed into machine learning models, as it reduced the size of each tweet vector to size 200.
+
+After we've constructed dense vector representations of tweet text, we could easily feed these vectors into a machine learning model.
 
 ## Model Architecture
 

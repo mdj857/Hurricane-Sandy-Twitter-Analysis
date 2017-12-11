@@ -36,7 +36,11 @@ For our damage analysis, we used data from FEMA’s post-disaster survey of 300,
 
 ## Preprocessing
 
+### Zip codes and damage classification
 First, we determined the zip code each tweet was from by examining the latitude and longitude of each tweet. Next, examined the FEMA dataset and looked at the types of damaged buildings by zip code. We categorized the damage level of each tweet by the worst damaged building in the zip code that tweet originated from. For example, if a tweet comes from a zip code with 6 affected buildings, 2 minorly damaged building, and 1 destroyed building, that tweet is classified as destroyed because of the single destroyed building. We chose this method of classification because we believe that it is more prudent to overestimate damage in a disaster scenario.
+
+### Text cleanup
+We cleaned up the text of the tweets to improve the performance of our textual analysis later. We removed common words like articles and prepositions. We also removed words which only appeared once in the entire dataset. Removing uncommon words resolved most of the issues surrounding non-word text. We also set all text to lowercase
 
 ## Our Design Overview
 

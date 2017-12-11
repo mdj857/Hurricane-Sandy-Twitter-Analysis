@@ -92,6 +92,12 @@ There are a couple of advantages to the Doc2Vec approach. The first is that the 
 
 Naturally, there are many ways to encode _D_. Here are three: 
 
+**Bag of words:** This is the simplest encoding. _D<sub>ij</sub>_ simply contains the number of times the word _i_ occurs in document _j_. Naturally, this skews the embedding towards words that appear more frequently. 
+
+**Term-Frequency-Inverse-Document-Frequency (tf-idf):** In essence, tf-idf is identical to the bag-of-words approach but with a key difference. _D<sub>ij</sub>_ still contains the frequency of the word _i_ in document _j_, but normalized over the number of times _i_ appears in the entire set of documents (all of the columns of _D_) 
+
+**Latent Semantic Indexing (LSI):**: Because _D_ might become pretty large when working with large sets of text (like our tweets!), it’d be pretty useful to have a _low-rank-approximation_ of _D_. A _low-rank_approximation_ is a low-dimensional representation of something that exists in high dimensions. This process is used frequently in image compression. Latent Semantic Indexing is exactly a low-rank approximation of the term-document matrix _D_ encoded with tf-idf (detailed above)! As it turns out, this encoding is pretty useful to feed into machine learning models.
+
 ## Model Architecture
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/model_architecture.png "Model Architecture")

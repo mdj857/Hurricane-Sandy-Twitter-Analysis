@@ -9,7 +9,7 @@ The 2017 Atlantic hurricane season was one of the most active hurricane seasons 
 
 To answer our question, we turned our attention to one of the most significant meteorological events in recent memory: Hurricane Sandy. 
 
-As it turns out, there was no lack of Twitter about Hurricane Sandy. For our project, we analyzed 37 publicly available tweets with the hashtag “#sandy” or containing some other keyword deemed relevant to the storm and its aftermath [1]. 
+As it turns out, there was no lack of Twitter about Hurricane Sandy. For our project, we analyzed 37 million publicly available tweets with the hashtag “#sandy” or containing some other keyword deemed relevant to the storm and its aftermath [1]. 
 
 For our damage analysis, we used data from FEMA’s post-disaster survey of 300,000 affected buildings in the tri-state area [2]. As part of their survey, FEMA labeled buildings as affected, minor damage, major damage, or destroyed. A summary of our datasets and the damage classification rule is shown below. 
 
@@ -36,15 +36,15 @@ For our damage analysis, we used data from FEMA’s post-disaster survey of 300,
 
 ## Our Design Overview
 
-![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/blob/master/images/block_diagram.png "Block Diagram")
+![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/block_diagram.png "Block Diagram")
 
 ## Visualization
 
-![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/blob/master/images/map_tool.png "Map Visualizer")
+![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/map_tool.png "Map Visualizer")
 
 ## Word Clouds
 
-
+![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/word_clouds.png "Word Clouds")
 
 
 # References: 

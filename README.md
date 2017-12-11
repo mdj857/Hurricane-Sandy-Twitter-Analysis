@@ -34,7 +34,13 @@ For our damage analysis, we used data from FEMA’s post-disaster survey of 300,
 
 ###### Adapted from https://data.femadata.com/MOTF/Hurricane_Sandy/FEMA%20MOTF-Hurricane%20Sandy%20Products%20ReadME%20FINAL.pdf
 
+## Our Design Overview
+
+![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/block_diagram.png "Block Diagram")
+
 ## Preprocessing
+
+After we found our two datasets, we needed to combine them so that we could perform predictive analysis. The following subsections describe our methods cross-referencing our data. We ultimately wanted each geo-tagged tweet in the USA to have a damage level associated with it.
 
 ### Removing tweets
 The original dataset contains 47 million tweets. First, we removed tweets which had no location data and tweets which came from outside the United States. Next, we removed all tweets which came from outside the New York City area. We only preserved tweets which came from regions affected by the Hurricane. We were left with 2 million tweets by the end of this process.
@@ -44,10 +50,6 @@ First, we determined the zip code each tweet was from by examining the latitude 
 
 ### Text cleanup
 We cleaned up the text of the tweets to improve the performance of our textual analysis later. We removed common words like articles and prepositions. We also removed words which only appeared once in the entire dataset. Removing uncommon words resolved most of the issues surrounding non-word text. We also set all text to lowercase.
-
-## Our Design Overview
-
-![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/block_diagram.png "Block Diagram")
 
 ## Map Visualization
 
@@ -98,7 +100,7 @@ Naturally, there are many ways to encode _D_. Here are three:
 
 **Latent Semantic Indexing (LSI):** Because _D_ might become pretty large when working with large sets of text (like our tweets!), it’d be pretty useful to have a _low-rank_ _approximation_ of _D_. A _low-rank_ _approximation_ is representation of something where you remove non-essential information. This process is used frequently in image compression. Latent Semantic Indexing is exactly a low-rank approximation of the term-document matrix _D_ encoded with tf-idf (detailed above)! As it turns out, this encoding was pretty useful to feed into machine learning models, as it reduced the size of each tweet vector to size 200.
 
-After we've constructed dense vector representations of tweet text, we could easily feed these vectors into a machine learning model.
+After we've constructed dense vector representations of tweet text, we were able to easily feed these vectors into a machine learning model.
 
 ## Model Architecture
 

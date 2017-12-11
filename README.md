@@ -14,6 +14,7 @@ As it turns out, there was no lack of Twitter about Hurricane Sandy. For our pro
 For our damage analysis, we used data from FEMA’s post-disaster survey of 300,000 affected buildings in the tri-state area [2]. As part of their survey, FEMA labeled buildings as affected, minor damage, major damage, or destroyed. A summary of our datasets and the damage classification rule is shown below. 
 
 #### The Datasets
+
 | | Tweet Dataset | FEMA Damage Dataset |
 | ---- | ------- | ----- |
 | Number of Samples | 47 million tweets (11 Gb)  | 300k buildings  |
@@ -23,6 +24,7 @@ For our damage analysis, we used data from FEMA’s post-disaster survey of 300,
 
 
 #### FEMA Damage Classification
+
 | Damage Level | Description |
 | -- | -- |
 | Affected | Generally superficial damage to solid structures (loss of tiles or roof shingles); some mobile homes and light structures damaged or displaced. |

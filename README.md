@@ -9,7 +9,7 @@ The 2017 Atlantic hurricane season was one of the most active hurricane seasons 
 
 To answer our question, we turned our attention to one of the most significant meteorological events in recent memory: Hurricane Sandy. 
 
-As it turns out, there was no lack of Twitter about Hurricane Sandy. For our project, we analyzed 37 million publicly available tweets with the hashtag “#sandy” or containing some other keyword deemed relevant to the storm and its aftermath [1]. 
+As it turns out, there was no lack of Twitter about Hurricane Sandy. For our project, we analyzed 47 million publicly available tweets with the hashtag “#sandy” or containing some other keyword deemed relevant to the storm and its aftermath [1]. 
 
 For our damage analysis, we used data from FEMA’s post-disaster survey of 300,000 affected buildings in the tri-state area [2]. As part of their survey, FEMA labeled buildings as affected, minor damage, major damage, or destroyed. A summary of our datasets and the damage classification rule is shown below. 
 
@@ -17,7 +17,7 @@ For our damage analysis, we used data from FEMA’s post-disaster survey of 300,
 
 | | Tweet Dataset | FEMA Damage Dataset |
 | ---- | ------- | ----- |
-| Number of Samples | 47 million tweets (11 GB)  | 300k buildings (48 MB)  |
+| Number of Samples | 47 million tweets (11 GB)  | 300k buildings (375 MB)  |
 | Description | Tweets collected from 10/15/12 to 11/12/12 containing hashtag "#sandy" or related keywords | Collection of damage reports for buildings after Hurricane Sandy |
 | Number of Features | 13 | 20 |
 | Important Features | time_created, num_followers, latitude, longitude, text_of_tweet | latitude, longitude, damage_level, damage_type |
@@ -62,7 +62,11 @@ Next, we tried to classify the presence of damaged buildings by zip code using t
 
 ## Tweets as Embedded Vectors
 
+In order to make meaning out of our tweets, we sought the help of the Doc2Vec library, as close relative of the popular Word2Vec API. Essentially, Doc2Vec converts sentences (in our case, tweets) into vectors. In order to do this, our dataset was converted into a matrix _D_, where each row denotes of tokens in the dataset and each column denotes a tweet. Each element _D<sub>ij</sub>_ consists of some value to indicate the presence of token _i_ in sentence _j_ [3]. An example illustration of the Doc2Vec framework is shown below: 
+
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/doc2vec.png "Doc2vec Illustration")
+
+Naturally, there are many ways to encode _D_. Here are three: 
 
 ## Model Architecture
 
@@ -77,5 +81,8 @@ Next, we tried to classify the presence of damaged buildings by zip code using t
 [1] http://dx.doi.org/10.5061/dryad.15fv2
 
 [2] https://data.femadata.com/MOTF/
+
+[3] https://cs.stanford.edu/~quocle/paragraph_vector.pdf
+
 
 

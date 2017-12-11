@@ -76,11 +76,11 @@ We thought that there might be predictive information in the distribution of the
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/time_series_1.png "Time Series 1")
 
-We tried to predict the distribution of buildings damaged by FEMA using the distribution of tweets by hour as features. We were unsuccessful in making this prediction, as predicting all zeros resulted in a better mean absolute error score. 
+We tried to predict the distribution of buildings damaged by FEMA using the distribution of tweets by hour as features. We were unsuccessful in making this prediction, as predicting all zeros resulted in a better mean absolute error score. We used the XGBoost Regressor to make our predictions. Below is the results of our regression.
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/time_series_2.png "Time Series 2")
 
-Next, we tried to classify the presence of damaged buildings by zip code using the same frequency information. If a zip code had a building classified in a certain category, we classed that as true in our prediction. Note that we classified the tweets differently here than we do in our analysis of the tweet text. The below plots are the ROC scores for each of the five categories.
+Next, we tried to classify the presence of damaged buildings by zip code using the same frequency information. If a zip code had a building classified in a certain category, we classed that as true in our prediction. Note that we classified the tweets differently here than we do in our analysis of the tweet text. The below plots are the ROC scores for each of the five categories. We used the XGBoost Classifier to make our predictions.
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/time_series_3.png "Time Series 3")
 

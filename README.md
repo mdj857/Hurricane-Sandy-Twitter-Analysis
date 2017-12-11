@@ -78,7 +78,7 @@ We tried to predict the distribution of buildings damaged by FEMA using the dist
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/time_series_2.png "Time Series 2")
 
-Next, we tried to classify the presence of damaged buildings by zip code using the same frequency information. If a zip code had a building classified in a certain category, we classed that as true in our prediction. The below plots are the ROC scores for each of the five categories
+Next, we tried to classify the presence of damaged buildings by zip code using the same frequency information. If a zip code had a building classified in a certain category, we classed that as true in our prediction. Note that we classified the tweets differently here than we do in our analysis of the tweet text. The below plots are the ROC scores for each of the five categories
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/time_series_3.png "Time Series 3")
 

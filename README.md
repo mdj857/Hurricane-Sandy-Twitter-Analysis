@@ -9,7 +9,7 @@ The 2017 Atlantic hurricane season was one of the most active hurricane seasons 
 
 To answer our question, we turned our attention to one of the most significant meteorological events in recent memory: Hurricane Sandy. 
 
-As it turns out, there was no lack of Twitter about Hurricane Sandy. For our project, we analyzed 37 million publicly available tweets with the hashtag “#sandy” or containing some other keyword deemed relevant to the storm and its aftermath [1]. 
+As it turns out, there was no lack of Twitter about Hurricane Sandy. For our project, we analyzed 47 million publicly available tweets with the hashtag “#sandy” or containing some other keyword deemed relevant to the storm and its aftermath [1]. 
 
 For our damage analysis, we used data from FEMA’s post-disaster survey of 300,000 affected buildings in the tri-state area [2]. As part of their survey, FEMA labeled buildings as affected, minor damage, major damage, or destroyed. A summary of our datasets and the damage classification rule is shown below. 
 
@@ -17,7 +17,7 @@ For our damage analysis, we used data from FEMA’s post-disaster survey of 300,
 
 | | Tweet Dataset | FEMA Damage Dataset |
 | ---- | ------- | ----- |
-| Number of Samples | 47 million tweets (11 GB)  | 300k buildings (48 MB)  |
+| Number of Samples | 47 million tweets (11 GB)  | 300k buildings (375 MB)  |
 | Description | Tweets collected from 10/15/12 to 11/12/12 containing hashtag "#sandy" or related keywords | Collection of damage reports for buildings after Hurricane Sandy |
 | Number of Features | 13 | 20 |
 | Important Features | time_created, num_followers, latitude, longitude, text_of_tweet | latitude, longitude, damage_level, damage_type |
@@ -48,13 +48,25 @@ For our damage analysis, we used data from FEMA’s post-disaster survey of 300,
 
 ## Time Series Exploration
 
+We thought that there might be predictive information in the distribution of the tweets by zip code. We observed that the dataset had many more tweets during the time when the most affected regions were under Hurricane Sandy. The image below on the right is the distribution of tweets between October 15th 2012 and November 15th 2012. The below image on the left is the distribution of tweets for each zip code between October 29th 2012 at 6pm EST and October 30th 2012 at 6pm EST. 
+
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/time_series_1.png "Time Series 1")
+
+We tried to predict the distribution of buildings damaged by FEMA using the distribution of tweets by hour as features. We were unsuccessful in making this prediction, as predicting all zeros resulted in a better mean absolute error score. 
+
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/time_series_2.png "Time Series 2")
+
+Next, we tried to classify the presence of damaged buildings by zip code using the same frequency information. If a zip code had a building classified in a certain category, we classed that as true in our prediction. The below plots are the ROC scores for each of the five categories
+
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/time_series_3.png "Time Series 3")
 
 ## Tweets as Embedded Vectors
 
+In order to make meaning out of our tweets, we sought the help of the Doc2Vec library, as close relative of the popular Word2Vec API. Essentially, Doc2Vec converts sentences (in our case, tweets) into vectors. In order to do this, our dataset was converted into a matrix _D_, where each row denotes of tokens in the dataset and each column denotes a tweet. Each element _D<sub>ij</sub>_ consists of some value to indicate the presence of token _i_ in sentence _j_ [3]. An example illustration of the Doc2Vec framework is shown below: 
+
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/doc2vec.png "Doc2vec Illustration")
+
+Naturally, there are many ways to encode _D_. Here are three: 
 
 ## Model Architecture
 
@@ -78,6 +90,8 @@ The output layer of the network outputs a classification probability for each of
 
 [2] https://data.femadata.com/MOTF/
 
-[3] https://aclweb.org/anthology/W/W16/W16-6201.pdf
+[3] https://cs.stanford.edu/~quocle/paragraph_vector.pdf
 
-[4] http://www.deeplearningbook.org/
+[4] https://aclweb.org/anthology/W/W16/W16-6201.pdf
+
+[5] http://www.deeplearningbook.org/

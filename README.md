@@ -44,7 +44,7 @@ For our damage analysis, we used data from FEMA’s post-disaster survey of 300,
 
 ## Word Clouds
 
-
+![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/blob/master/images/word_clouds.png "Word Clouds")
 
 
 # References: 

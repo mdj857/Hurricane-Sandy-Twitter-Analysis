@@ -9,7 +9,7 @@ The 2017 Atlantic hurricane season was one of the most active hurricane seasons 
 
 To answer our question, we turned our attention to one of the most significant meteorological events in recent memory: Hurricane Sandy. 
 
-As it turns out, there was no lack of Twitter about Hurricane Sandy. For our project, we analyzed 47 million publicly available tweets with the hashtag “#sandy” or containing some other keyword deemed relevant to the storm and its aftermath [1]. 
+As it turns out, there was no lack of tweets about Hurricane Sandy. For our project, we analyzed 47 million publicly available tweets with the hashtag “#sandy” or containing some other keyword deemed relevant to the storm and its aftermath [1]. 
 
 For our damage analysis, we used data from FEMA’s post-disaster survey of 300,000 affected buildings in the tri-state area [2]. As part of their survey, FEMA labeled buildings as affected, minor damage, major damage, or destroyed. A summary of our datasets and the damage classification rule is shown below. 
 
@@ -70,7 +70,7 @@ We noticed that the destroyed word cloud had a large “power” text, indicatin
 
 ## Time Series Exploration
 
-We thought that there might be predictive information in the distribution of the tweets by zip code. We observed that the dataset had many more tweets during the time when the most affected regions were under Hurricane Sandy. The image below on the right is the distribution of tweets between October 15th 2012 and November 15th 2012. The below image on the left is the distribution of tweets for each zip code between October 29th 2012 at 6pm EST and October 30th 2012 at 6pm EST. 
+We thought that there might be predictive information in the distribution of the tweets by zip code. We observed that the dataset had many more tweets during the time when the most affected regions were under Hurricane Sandy. The image below on the left is the distribution of tweets for each zip code between October 29th 2012 at 6pm EST and October 30th 2012 at 6pm EST. The image below on the right is the distribution of tweets between October 15th 2012 and November 15th 2012. 
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/time_series_1.png "Time Series 1")
 
@@ -78,7 +78,7 @@ We tried to predict the distribution of buildings damaged by FEMA using the dist
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/time_series_2.png "Time Series 2")
 
-Next, we tried to classify the presence of damaged buildings by zip code using the same frequency information. If a zip code had a building classified in a certain category, we classed that as true in our prediction. Note that we classified the tweets differently here than we do in our analysis of the tweet text. The below plots are the ROC scores for each of the five categories
+Next, we tried to classify the presence of damaged buildings by zip code using the same frequency information. If a zip code had a building classified in a certain category, we classed that as true in our prediction. Note that we classified the tweets differently here than we do in our analysis of the tweet text. The below plots are the ROC scores for each of the five categories.
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/time_series_3.png "Time Series 3")
 

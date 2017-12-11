@@ -32,6 +32,10 @@ For our damage analysis, we used data from FEMA’s post-disaster survey of 300,
 | Major | Some solid structures are destroyed; most sustain exterior and interior damage (roofs missing, interior walls exposed); most mobile homes and light structures are destroyed. Extensive structural damage from storm surge. |
 | Destroyed | Most solid and all light or mobile home structures destroyed. Structure has been completely destroyed or washed away from storm surge. |
 
+## Preprocessing
+
+First, we determined the zip code each tweet was from by examining the latitude and longitude of each tweet. Next, examined the FEMA dataset and looked at the types of damaged buildings by zip code. We categorized the damage level of each tweet by the worst damaged building in the zip code that tweet originated from. For example, if a tweet comes from a zip code with 6 affected buildings, 2 minorly damaged building, and 1 destroyed building, that tweet is classified as destroyed because of the single destroyed building. We chose this method of classification because we believe that it is more prudent to assume more damage in a disaster scenario.
+
 ###### Adapted from https://data.femadata.com/MOTF/Hurricane_Sandy/FEMA%20MOTF-Hurricane%20Sandy%20Products%20ReadME%20FINAL.pdf
 
 ## Our Design Overview

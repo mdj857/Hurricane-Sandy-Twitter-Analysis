@@ -42,7 +42,7 @@ First, we determined the zip code each tweet was from by examining the latitude 
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/block_diagram.png "Block Diagram")
 
-## Visualization
+## Map Visualization
 
 Before we began creating any models, we tried to get a better understanding of our data. Below is an image of Plotly visualization tool that we created, which shows our tweets on a map. Because of computational constraints, only 20,000 tweets are plotted. Access the interactive Plotly map [here](https://plot.ly/~javiertzepeda/0.embed) (You might have to zoom in a little to get a better look). 
 
@@ -53,7 +53,11 @@ We noticed a high level damage around the coast, with lower levels of damage fur
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/map_tool.png "Map Visualizer")
 
-## Word Clouds
+## Word Cloud Visualization
+
+Another powerful tool that we used to analyze our data were word clouds, which we generated with the library [here]( https://github.com/amueller/word_cloud). Each word cloud shows a visual representation of the text data for each damage classification. Words are weighted such that larger words are more frequent in that classification of the data set.
+
+We noticed that the destroyed word cloud had a large “power” text, indicating that those in destroyed areas were most likely without power (and were tweeting about it!). What patterns do you see?
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/word_clouds.png "Word Clouds")
 

@@ -112,7 +112,11 @@ The network's input layer receives a 200-dimensional topic vector from a latent 
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/empirical_results.png "Deep Topics Network Results")
 
+We achieved a classification accuracy of 88%. This is a good result because predicting that all tweets are members of the most numerous category would result in a 70% classification accuracy.
+
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/simple_results.png "Simple BOW Network Results")
+
+Using the Kera default architecture, we achieved a 71% classification accuracy which is only slightly better than classifying based on the frequency of classifications in the data.
 
 
 # References: 

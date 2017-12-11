@@ -9,7 +9,7 @@ The 2017 Atlantic hurricane season was one of the most active hurricane seasons 
 
 To answer our question, we turned our attention to one of the most significant meteorological events in recent memory: Hurricane Sandy. 
 
-As it turns out, there was no lack of Twitter about Hurricane Sandy. For our project, we analyzed 37 publicly available tweets with the hashtag “#sandy” or containing some other keyword deemed relevant to the storm and its aftermath [1]. 
+As it turns out, there was no lack of Twitter about Hurricane Sandy. For our project, we analyzed 37 million publicly available tweets with the hashtag “#sandy” or containing some other keyword deemed relevant to the storm and its aftermath [1]. 
 
 For our damage analysis, we used data from FEMA’s post-disaster survey of 300,000 affected buildings in the tri-state area [2]. As part of their survey, FEMA labeled buildings as affected, minor damage, major damage, or destroyed. A summary of our datasets and the damage classification rule is shown below. 
 

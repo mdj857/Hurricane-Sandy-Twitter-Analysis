@@ -31,6 +31,15 @@ For our damage analysis, we used data from FEMA’s post-disaster survey of 300,
 | Destroyed | Most solid and all light or mobile home structures destroyed. Structure has been completely destroyed or washed away from storm surge. |
 ###### Adapted from https://data.femadata.com/MOTF/Hurricane_Sandy/FEMA%20MOTF-Hurricane%20Sandy%20Products%20ReadME%20FINAL.pdf
 
+## Our Design Overview
+
+![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/block_diagram.png "Block Diagram")
+
+## Visualization
+
+![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/map_tool.png "Map Visualizer")
+
+## Word Clouds
 
 
 

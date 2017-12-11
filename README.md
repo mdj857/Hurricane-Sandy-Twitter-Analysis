@@ -60,9 +60,17 @@ For our damage analysis, we used data from FEMA’s post-disaster survey of 300,
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/model_architecture.png "Model Architecture")
 
+The network's input layer receives a 200-dimensional topic vector from a latent semantic index (LSI) embedding.  
+The early hidden layers reduce the previous layer size by half until reaching a size of 10.  
+Next, the deep layers learn complex nonlinear relationships between the earlier learned hidden features.  
+There are 20 deep hidden layers, each of size 10. All of the hidden layers use a ReLU activation function.  
+The output layer of the network outputs a classification probability for each of the five categories with a softmax activation function.  
+
 ## Empirical Results
 
-![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/empirical_results.png "Empirical Results")
+![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/empirical_results.png "Deep Topics Network Results")
+
+![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/simple_results.png "Simple BOW Network Results")
 
 
 # References: 

@@ -1,5 +1,7 @@
-#!/usr/bin/env python2
-# -*- coding: utf-8 -*-
+# topic_nn.py
+# runs a deep network on the tweet dataset.
+# given the tweet's lsi embedding, predict the damage class.
+# test accuracy: 0.88
 
 from gensim import corpora, models, similarities 
 import numpy as np

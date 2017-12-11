@@ -17,7 +17,7 @@ For our damage analysis, we used data from FEMA’s post-disaster survey of 300,
 
 | | Tweet Dataset | FEMA Damage Dataset |
 | ---- | ------- | ----- |
-| Number of Samples | 47 million tweets (11 Gb)  | 300k buildings  |
+| Number of Samples | 47 million tweets (11 GB)  | 300k buildings (48 MB)  |
 | Description | Tweets collected from 10/15/12 to 11/12/12 containing hashtag "#sandy" or related keywords | Collection of damage reports for buildings after Hurricane Sandy |
 | Number of Features | 13 | 20 |
 | Important Features | time_created, num_followers, latitude, longitude, text_of_tweet | latitude, longitude, damage_level, damage_type |
@@ -26,7 +26,7 @@ For our damage analysis, we used data from FEMA’s post-disaster survey of 300,
 #### FEMA Damage Classification
 
 | Damage Level | Description |
-| -- | -- |
+| ------------ | ----------- |
 | Affected | Generally superficial damage to solid structures (loss of tiles or roof shingles); some mobile homes and light structures damaged or displaced. |
 | Minor | Solid structures sustain exterior damage (e.g., missing roofs or roof segments); some mobile homes and light structures are destroyed, many are damaged or displaced. |
 | Major | Some solid structures are destroyed; most sustain exterior and interior damage (roofs missing, interior walls exposed); most mobile homes and light structures are destroyed. Extensive structural damage from storm surge. |

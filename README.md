@@ -36,7 +36,7 @@ For our damage analysis, we used data from FEMA’s post-disaster survey of 300,
 
 ## Preprocessing
 
-First, we determined the zip code each tweet was from by examining the latitude and longitude of each tweet. Next, examined the FEMA dataset and looked at the types of damaged buildings by zip code. We categorized the damage level of each tweet by the worst damaged building in the zip code that tweet originated from. For example, if a tweet comes from a zip code with 6 affected buildings, 2 minorly damaged building, and 1 destroyed building, that tweet is classified as destroyed because of the single destroyed building. We chose this method of classification because we believe that it is more prudent to assume more damage in a disaster scenario.
+First, we determined the zip code each tweet was from by examining the latitude and longitude of each tweet. Next, examined the FEMA dataset and looked at the types of damaged buildings by zip code. We categorized the damage level of each tweet by the worst damaged building in the zip code that tweet originated from. For example, if a tweet comes from a zip code with 6 affected buildings, 2 minorly damaged building, and 1 destroyed building, that tweet is classified as destroyed because of the single destroyed building. We chose this method of classification because we believe that it is more prudent to overestimate damage in a disaster scenario.
 
 ## Our Design Overview
 
@@ -69,6 +69,8 @@ Next, we tried to classify the presence of damaged buildings by zip code using t
 In order to make meaning out of our tweets, we sought the help of the Doc2Vec library, as close relative of the popular Word2Vec API. Essentially, Doc2Vec converts sentences (in our case, tweets) into vectors. In order to do this, our dataset was converted into a matrix _D_, where each row denotes of tokens in the dataset and each column denotes a tweet. Each element _D<sub>ij</sub>_ consists of some value to indicate the presence of token _i_ in sentence _j_ [3]. An example illustration of the Doc2Vec framework is shown below: 
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/doc2vec.png "Doc2vec Illustration")
+
+There are a couple of advantages to the Doc2Vec approach. The first is that the semantic relationships between words are preserved; the euclidean distance between the vectorized words encapsulates the semantics behind the words themselves. Second, including a term-document matrix in the encoding preserves the ordering of sentences themselves. For example, _I walked the dog_ is a drastically different from _The dog walked I_. Including _D_ in a sentence encoding allows for the inclusion of both semantic and ordinal in a sentence [3]. 
 
 Naturally, there are many ways to encode _D_. Here are three: 
 

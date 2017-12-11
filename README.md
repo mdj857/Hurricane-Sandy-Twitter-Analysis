@@ -103,6 +103,8 @@ Naturally, there are many ways to encode _D_. Here are three:
 After we've constructed dense vector representations of tweet text, we were able to easily feed these vectors into a machine learning model.
 
 ## Model Architecture
+![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/simple_model.png "Simple Model Architecture")
+
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/model_architecture.png "Model Architecture")
 

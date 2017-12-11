@@ -46,6 +46,24 @@ For our damage analysis, we used data from FEMA’s post-disaster survey of 300,
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/word_clouds.png "Word Clouds")
 
+## Time Series Exploration
+
+![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/time_series_1.png "Time Series 1")
+![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/time_series_2.png "Time Series 2")
+![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/time_series_3.png "Time Series 3")
+
+## Tweets as Embedded Vectors
+
+![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/doc2vec.png "Doc2vec Illustration")
+
+## Model Architecture
+
+![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/model_architecture.png "Model Architecture")
+
+## Empirical Results
+
+![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/empirical_results.png "Empirical Results")
+
 
 # References: 
 [1] http://dx.doi.org/10.5061/dryad.15fv2

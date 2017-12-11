@@ -1,10 +1,8 @@
-#!/usr/bin/env python2
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Dec  9 01:07:25 2017
+# merge.py:
+# merges the tweets csv and very large lsi_corpus (10GB+)
+# creates a new topic frame csv.
+# (1.8M, 15) . (1.8M, 200) -> (1.8M, 215)
 
-@author: mattjohnson
-"""
 from gensim import corpora, models, similarities 
 import numpy as np
 import pandas as pd

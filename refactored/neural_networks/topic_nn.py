@@ -31,8 +31,7 @@ def chunks(iterable, size):
 
 
 # batch generation
-batch_size = 512
-# batch_gen = batch_generator("corpus/1train_topic_with_onehot_label.csv.gz", size=batch_size, compression="gzip")
+batch_size = 64
 train_gen = batch_generator("corpus/topic_clean.csv.gz", size=batch_size, compression="gzip")
 test_gen = batch_generator("test_corpus/topic_clean.csv.gz", size=batch_size, compression="gzip")
 
@@ -42,22 +41,25 @@ test_gen = batch_generator("test_corpus/topic_clean.csv.gz", size=batch_size, co
 
 # compile keras model
 model = Sequential()
-model.add(Dense(200, input_shape=(200,), activation='relu'))
-model.add(Dropout(.5))
-model.add(Dense(100, activation='relu'))
-model.add(Dropout(.5))
-model.add(Dense(50, activation='relu'))
-model.add(Dropout(.5))
+model.add(Dense(200, input_shape=(200,), activation='relu')); 
+model.add(Dense(100, activation='relu'));
+model.add(Dense(50, activation='relu'));
+model.add(Dense(20, activation='relu')); 
+for i in range(20): 
+    # deepen the model with 20 more hidden layers
+    model.add(Dense(10, activation='relu')); 
 model.add(Dense(5, activation='softmax'))
 
-model.compile(loss='binary_crossentropy', 
-              optimizer = 'adam', 
-              metrics = ['accuracy'])
-
-history = model.fit_generator(train_gen, steps_per_epoch=500, epochs=2, verbose=1, shuffle=True)
+# fit the keras model
+model.compile(loss='binary_crossentropy', optimizer = 'adam',metrics = ['accuracy'])
+history = model.fit_generator(train_gen, steps_per_epoch=450, epochs=50, verbose=1, shuffle=True)
 model.save("models/topic_nn.h5")
-print model.metrics_names
-print model.evaluate_generator(test_gen, steps=300)
+keras.utils.plot_model(model, to_file='models/model.png')
+
+# evaluate model
+score = model.evaluate_generator(test_gen, steps=350)
+print ("Test Loss: %f" % score[0])
+print ("Test Accuracy: %f" % score[1])
 
 import matplotlib.pyplot as plt
 plt.plot(history.history['acc'])
@@ -65,7 +67,6 @@ plt.title('model accuracy')
 plt.ylabel('accuracy')
 plt.xlabel('epoch')
 plt.legend(['train', 'test'], loc='upper left')
-#plt.show()
 
 # summarize history for loss
 plt.plot(history.history['loss'])

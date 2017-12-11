@@ -1,10 +1,9 @@
-#!/usr/bin/env python2
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Dec  6 14:56:56 2017
-
-@author: mattjohnson
-"""
+# corpus.py
+# Generates the corpora for tweet embeddings.
+# dictionary = id-map of the common words within the tweet dataset.
+# corpus = simple bag of words embedding.
+# tfidf_corpus = term-frequency inverse doc-frequency embedding.
+# lsi_corpus = latent semantic indexing embedding.
 
 import pickle
 import numpy 

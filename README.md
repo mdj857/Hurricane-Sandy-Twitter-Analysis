@@ -52,4 +52,6 @@ For our damage analysis, we used data from FEMA’s post-disaster survey of 300,
 
 [2] https://data.femadata.com/MOTF/
 
+[3] https://aclweb.org/anthology/W/W16/W16-6201.pdf
 
+[4] http://www.deeplearningbook.org/

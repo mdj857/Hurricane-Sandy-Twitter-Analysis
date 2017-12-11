@@ -1,7 +1,5 @@
-# topic_nn.py
-# runs a deep network on the tweet dataset.
-# given the tweet's lsi embedding, predict the damage class.
-# test accuracy: 0.88
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
 
 from gensim import corpora, models, similarities 
 import numpy as np
@@ -33,7 +31,7 @@ def chunks(iterable, size):
 
 
 # batch generation
-batch_size = 512
+batch_size = 64
 train_gen = batch_generator("corpus/topic_clean.csv.gz", size=batch_size, compression="gzip")
 test_gen = batch_generator("test_corpus/topic_clean.csv.gz", size=batch_size, compression="gzip")
 
@@ -54,8 +52,9 @@ model.add(Dense(5, activation='softmax'))
 
 # fit the keras model
 model.compile(loss='binary_crossentropy', optimizer = 'adam',metrics = ['accuracy'])
-history = model.fit_generator(train_gen, steps_per_epoch=1000, epochs=3, verbose=1, shuffle=True)
+history = model.fit_generator(train_gen, steps_per_epoch=450, epochs=50, verbose=1, shuffle=True)
 model.save("models/topic_nn.h5")
+keras.utils.plot_model(model, to_file='models/model.png')
 
 # evaluate model
 score = model.evaluate_generator(test_gen, steps=350)

@@ -139,7 +139,7 @@ Fortunately, our custom embedding and complex network architecture paid off! We 
 
 Have questions? Comments? Please feel free to contact us or check out our Github repository for this project. 
 
-https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis
+[https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis)
 
 mjohnson082396 at utexas.edu
 
@@ -147,12 +147,12 @@ javier.t.zepeda at utexas.edu
 
 
 ## References: 
-[1] http://dx.doi.org/10.5061/dryad.15fv2
+[1] [http://dx.doi.org/10.5061/dryad.15fv2](http://dx.doi.org/10.5061/dryad.15fv2)
 
-[2] https://data.femadata.com/MOTF/
+[2] [https://data.femadata.com/MOTF/](https://data.femadata.com/MOTF/)
 
-[3] https://cs.stanford.edu/~quocle/paragraph_vector.pdf
+[3] [https://cs.stanford.edu/~quocle/paragraph_vector.pdf](https://cs.stanford.edu/~quocle/paragraph_vector.pdf)
 
-[4] https://aclweb.org/anthology/W/W16/W16-6201.pdf
+[4] [https://aclweb.org/anthology/W/W16/W16-6201.pdf](https://aclweb.org/anthology/W/W16/W16-6201.pdf)
 
-[5] http://www.deeplearningbook.org/
+[5] [http://www.deeplearningbook.org/](http://www.deeplearningbook.org/)

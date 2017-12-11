@@ -103,6 +103,9 @@ Naturally, there are many ways to encode _D_. Here are three:
 After we've constructed dense vector representations of tweet text, we were able to easily feed these vectors into a machine learning model.
 
 ## Model Architecture
+
+For our first model, we elected to bypass the Doc2Vec embedding entirely and use a simple tokenizer API native to Keras. Essentially, the tokenizer yielded a one-hot-encoded 1.8 million tweet x 1000 token matrix (only including the top 1000 most frequently occuring tokens). This was very similar to the bag of words approach described above. Then, we fed the encoded matrix into a simple sequential neural network with three hidden layers, scaling down the size of the input roughly in half at each stage. Below is a graphic displaying the simple model's architecture. 
+
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/simple_model.png "Simple Model Architecture")
 
 
@@ -118,7 +121,7 @@ We achieved a classification accuracy of 88%. This is a good result because pred
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/simple_results.png "Simple BOW Network Results")
 
-Using the Kera default architecture, we achieved a 71% classification accuracy which is only slightly better than classifying based on the frequency of classifications in the data.
+Using the Keras default architecture, we achieved a 71% classification accuracy which is only slightly better than classifying based on the frequency of classifications in the data.
 
 
 # References: 

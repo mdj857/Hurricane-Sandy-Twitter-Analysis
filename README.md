@@ -36,15 +36,15 @@ For our damage analysis, we used data from FEMA’s post-disaster survey of 300,
 
 ## Our Design Overview
 
-![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/blob/master/images/block_diagram.png "Block Diagram")
+![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/block_diagram.png "Block Diagram")
 
 ## Visualization
 
-![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/blob/master/images/map_tool.png "Map Visualizer")
+![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/map_tool.png "Map Visualizer")
 
 ## Word Clouds
 
-![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/blob/master/images/word_clouds.png "Word Clouds")
+![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/word_clouds.png "Word Clouds")
 
 
 # References: 

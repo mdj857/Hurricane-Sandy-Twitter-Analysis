@@ -1,4 +1,4 @@
-# What if 140 characters could save lives? 
+## What if 140 characters could save lives? 
 
 ## Motivation
 
@@ -15,9 +15,9 @@ For our damage analysis, we used data from FEMA’s post-disaster survey of 300,
 
 INSERT DATASET TABLE HERE
 
-
 INSERT DAMAGE TABLE HERE 
 
+### Adapted from https://data.femadata.com/MOTF/Hurricane_Sandy/FEMA%20MOTF-Hurricane%20Sandy%20Products%20ReadME%20FINAL.pdf
 
 
 

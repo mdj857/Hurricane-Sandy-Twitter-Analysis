@@ -44,6 +44,13 @@ First, we determined the zip code each tweet was from by examining the latitude 
 
 ## Visualization
 
+Before we began creating any models, we tried to get a better understanding of our data. Below is an image of Plotly visualization tool that we created, which shows our tweets on a map. Because of computational constraints, only 20,000 tweets are plotted. Access the interactive Plotly map [here](https://plot.ly/~javiertzepeda/0.embed) (You might have to zoom in a little to get a better look). 
+
+Each tweet marker’s color represents its respective damage classification: pink for affected, yellow for minor, orange for major, and red for destroyed. The radius of the marker represents the number of followers of the tweet’s author, and hovering over a marker shows the tweet text and damage level.
+
+We noticed a high level damage around the coast, with lower levels of damage further inland.  Try discovering for yourself if you notice any relationships among the tweets, location, and damage classification. There’s some rather interesting and *colorful* tweets that we found very entertaining.
+
+
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/map_tool.png "Map Visualizer")
 
 ## Word Clouds
@@ -66,7 +73,7 @@ Next, we tried to classify the presence of damaged buildings by zip code using t
 
 ## Tweets as Embedded Vectors
 
-In order to make meaning out of our tweets, we sought the help of the Doc2Vec library, as close relative of the popular Word2Vec API. Essentially, Doc2Vec converts sentences (in our case, tweets) into vectors. In order to do this, our dataset was converted into a matrix _D_, where each row denotes of tokens in the dataset and each column denotes a tweet. Each element _D<sub>ij</sub>_ consists of some value to indicate the presence of token _i_ in sentence _j_ [3]. An example illustration of the Doc2Vec framework is shown below: 
+In order to make meaning out of our tweets, we sought the help of the Doc2Vec library, a close relative of the popular Word2Vec API. Essentially, Doc2Vec converts sentences (in our case, tweets) into vectors. In order to do this, our dataset was converted into a matrix _D_, where each row denotes of tokens in the dataset and each column denotes a tweet. Each element _D<sub>ij</sub>_ consists of some value to indicate the presence of token _i_ in sentence _j_ [3]. An example illustration of the Doc2Vec framework is shown below: 
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/doc2vec.png "Doc2vec Illustration")
 

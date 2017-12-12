@@ -82,15 +82,19 @@ We noticed that the destroyed word cloud had a large “power” text, indicatin
 
 We thought that there might be predictive information in the distribution of the tweets by zip code. We observed that the dataset had many more tweets during the time when the most affected regions were under Hurricane Sandy. The image below on the left is the distribution of tweets for each zip code between October 29th 2012 at 6pm EST and October 30th 2012 at 6pm EST. The image below on the right is the distribution of tweets between October 15th 2012 and November 15th 2012. 
 
-![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/time_series_1.png "Time Series 1")
+![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/time_series_1.png "distribution_1")
 
 We tried to predict the distribution of buildings damaged by FEMA using the distribution of tweets by hour as features. We were unsuccessful in making this prediction, as predicting all zeros resulted in a better mean absolute error score except for the "unknown" category. We used the XGBoost Regressor to make our predictions. Below is the results of our regression.
 
-![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/regression_pic.png "Time Series 2")
+![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/regression_pic.png "distribution_2")
 
 Next, we tried to classify the presence of damaged buildings by zip code using the same frequency information. If a zip code had a building classified in a certain category, we classed that as true in our prediction. Note that we classified the tweets differently here than we do in our analysis of the tweet text. The below plots are the ROC scores for each of the five categories. We used the XGBoost Classifier to make our predictions.
 
-![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/time_series_3.png "Time Series 3")
+![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/time_series_3.png "distribution_3")
+
+You can download the tweet distributions and damage distributions by zip code here:
+![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/tree/master/src/distribution_analysis/hours_dist.pkl "hours_dist.pkl ")![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/tree/master/src/distribution_analysis/zip_to_dist.pkl "zip_to_dist.pkl")
+
 
 ## Tweets as Embedded Vectors
 

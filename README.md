@@ -78,7 +78,7 @@ We noticed that the destroyed word cloud had a large “power” text, indicatin
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/word_clouds.png "Word Clouds")
 
-## Time Series Exploration
+## Distribution Analysis
 
 We thought that there might be predictive information in the distribution of the tweets by zip code. We observed that the dataset had many more tweets during the time when the most affected regions were under Hurricane Sandy. The image below on the left is the distribution of tweets for each zip code between October 29th 2012 at 6pm EST and October 30th 2012 at 6pm EST. The image below on the right is the distribution of tweets between October 15th 2012 and November 15th 2012. 
 
@@ -144,6 +144,8 @@ Have questions? Comments? Please feel free to contact us or check out our Github
 mjohnson082396 at utexas.edu
 
 javier.t.zepeda at utexas.edu
+
+mathew41796 at gmail.com
 
 
 ## References: 

@@ -92,9 +92,8 @@ Next, we tried to classify the presence of damaged buildings by zip code using t
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/time_series_3.png "distribution_3")
 
-You can download the tweet distributions and damage distributions by zip code here:
-![hours_dist.pkl](src/distribution_analysis/hours_dist.pkl)
-![zip_to_dist.pkl](src/distribution_analysis/zip_to_dist.pkl)
+You can download the pickle files for tweet distributions and damage distributions by zip code [here.](src/distribution_analysis)
+
 
 
 ## Tweets as Embedded Vectors

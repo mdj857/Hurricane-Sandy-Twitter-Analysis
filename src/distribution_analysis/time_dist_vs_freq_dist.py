@@ -1,3 +1,7 @@
+# This script explores the relationship between the distribution of tweets by
+# zip code against the distribution of damaged buildings by zipcode
+
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -9,7 +13,7 @@ from sklearn.metrics import mean_absolute_error
 from sklearn.cross_validation import train_test_split
 import xgboost as xgb
 
-#%% GET DATA
+#%% Get data
 
 with open('zip_to_dist.pkl', 'rb') as handle:
     zip_to_dist = pickle.load(handle)

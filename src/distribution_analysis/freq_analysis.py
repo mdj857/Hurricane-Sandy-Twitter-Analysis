@@ -1,3 +1,5 @@
+# The script appends damage information to the tweets csv, and saves it to a new csv.
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -7,9 +9,8 @@ import pickle
 import random
 
 #%% Read Tweets and damage information
-tweets_ny = pd.read_csv('ny_tweets.csv', )
-damage_data = pd.read_csv('determination.csv')
-
+tweets_ny = pd.read_csv('../../tweets/ny_tweets.csv', )
+damage_data = pd.read_csv('determination.csv') # TODO: Change this path
 
 #%%
 # This function takes a list of zipcodes of the locations (including duplicates) and 
@@ -53,6 +54,10 @@ for zipcode in range(6001, 11980):
     
     zip_to_dist[zipcode] =  [num_affected, num_minor, num_major, num_destroyed]
 
+# Save distribution
+with open('zip_to_dist.pkl', 'wb') as handle:
+	pickle.dump(zip_to_dist, handle)
+
 #%% Append distributions
 def add_dist(zipcode, num):
     if zipcode > 11979 or zipcode < 6001:
@@ -70,7 +75,7 @@ tweets_ny["destroyed"] = tweets_ny.apply(lambda row: add_dist(row['zipcode'], 3)
 tweets_ny = tweets_ny.fillna(0)
 tweets_ny["unknown"] = tweets_ny.apply(lambda row: add_none(1-(row['affected'] + row['minor'] + row['major'] + row['destroyed'])), axis=1)
 
-#%%
+#%% Save new csv
 tweets_ny.to_csv('tweets_ny_dist.csv')
 
     

@@ -1,3 +1,6 @@
+# Generates a corpus and examines similarites between a line of text
+# and the text in the tweets
+
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
@@ -14,16 +17,16 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from gensim import corpora, models, similarities 
 from collections import defaultdict
 
-with open('/Users/mattjohnson/Desktop/Term_Project/tweets/affected_tweets_clean.pkl', 'rb') as f:
+with open('../../tweets/affected_tweets_clean.pkl', 'rb') as f:
 	affected_tweets = pickle.load(f)
 
-with open('/Users/mattjohnson/Desktop/Term_Project/tweets/minor_tweets_clean.pkl', 'rb') as f:
+with open('../../tweets/minor_tweets_clean.pkl', 'rb') as f:
 	minor_tweets = pickle.load(f)
 
-with open('/Users/mattjohnson/Desktop/Term_Project/tweets/major_tweets_clean.pkl', 'rb') as f:
+with open('../../tweets/major_tweets_clean.pkl', 'rb') as f:
 	major_tweets = pickle.load(f)
 
-with open('/Users/mattjohnson/Desktop/Term_Project/tweets/destroyed_tweets_clean.pkl', 'rb') as f:
+with open('../../tweets/destroyed_tweets_clean.pkl', 'rb') as f:
 	destroyed_tweets = pickle.load(f)
 
 affected_tweets = [tweet.encode('utf-8') for tweet in affected_tweets]

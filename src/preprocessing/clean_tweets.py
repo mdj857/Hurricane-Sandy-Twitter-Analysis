@@ -1,3 +1,5 @@
+# This script calls the preprocessing library on a tweets csv
+
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
@@ -24,6 +26,5 @@ with open(sys.argv[1], 'rb') as f:
 dirty_tweets_str = [tweet.encode('utf-8') for tweet in dirty_tweets]
 clean_tweets = [p.clean(tweet) for tweet in dirty_tweets_str]
 
-pickle.dump(clean_tweets, open("/Users/mattjohnson/Desktop/Term_Project/tweets/" + sys.argv[2], "wb"))
-
+pickle.dump(clean_tweets, open("../../tweets/" + sys.argv[2], "wb"))
 

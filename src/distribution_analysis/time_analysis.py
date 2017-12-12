@@ -1,3 +1,6 @@
+# This function append a unix-time column to a tweets csv and find the
+# distribution of tweets by zip code
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -6,15 +9,13 @@ from time import mktime
 import pickle
 
 #%% Read Tweets
-big_tweets = pd.read_csv('./tweets_ny_dist.csv')
+big_tweets = pd.read_csv('../../tweets/tweets_ny_dist.csv')
 
 #%% Preprocess tweets
-
 big_tweets.fillna(value=0)
 big_tweets = big_tweets[big_tweets['zipcode'] != 0]
 
 #%% Unix time function
-
 def add_unix_col(str_time):
     if str_time == None:
         return 0
@@ -28,8 +29,7 @@ big_tweets.to_csv('tweets_ny_dist.csv')
 #%% big tweets unix time
 big_tweets = add_unix_col(big_tweets)
 
-#%% Display hist
-
+#%% Display hist of all tweets by time
 plt.hist(big_tweets["time"], bins=1000 )
 plt.yscale('log', nonposy='clip')
 plt.xlabel("unix time")
@@ -37,7 +37,6 @@ plt.ylabel("frequency")
 plt.title("Time distribution")
 
 #%% Returns 24 bins with number of tweets in each timeframe
-
 def get_hourly_rates(tweets, start_time):
     hours = np.empty((0,))
     for hour in range(0, 23):
@@ -55,8 +54,10 @@ for zipcode in range(6001, 11980):
     if np.isnan(hours_nyc.loc[0, zipcode]):
         hours_nyc = hours_nyc.drop(zipcode, axis=1)
 
-#%% 
+with open('hours_nyc.pkl', 'wb') as handle
+	pickle.dump(hours_nyc, handle)
 
+#%% Plot distributions by zip
 for col in range(6001, 11980):
     if col in hours_nyc.columns:
        plt.plot(hours_nyc.ix[:, col])

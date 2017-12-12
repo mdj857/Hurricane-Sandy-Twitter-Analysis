@@ -26,9 +26,9 @@ def chunks(iterable, size):
     for first in iterator:
         yield itertools.chain([first], itertools.islice(iterator, size - 1))
 
-train_path = "corpus/train.csv"
-corpus_path = "corpus/lsi_corpus.mm"
-frame_path = "corpus/topic_frame.csv"
+train_path = "../../embedding/train.csv"
+corpus_path = "../../embedding/lsi_corpus.mm"
+frame_path = "../../embedding/topic_frame.csv"
 tweets_gen = tweets_generator(train_path, corpus_path)
 chunk, chunk_size = (0, 5000)
 for tweets in chunks(tweets_gen, chunk_size):

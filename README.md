@@ -110,13 +110,13 @@ Naturally, there are many ways to encode _D_. Here are three:
 
 After we've constructed dense vector representations of tweet text, we were able to easily feed these vectors into a machine learning model.
 
-## Our first attempt: A simple model with Keras tweet embedding
+## A first attempt: A simple model with Keras tweet embedding
 
 For our first model, we elected to use a simple tokenizer API native to Keras to embed the tweets as vectors. Essentially, the tokenizer yielded a one-hot-encoded 1.8 million tweet x 1000 token matrix (only including the top 1000 most frequently occuring tokens). This was very similar to the bag of words approach described above. Then, we fed the encoded matrix into a simple sequential neural network with three hidden layers, scaling down the size of the input roughly in half at each stage. Below is a graphic displaying the simple model's architecture. 
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/simple_model.png "Simple Model Architecture")
 
-## Our second attempt: A custom deep network with custom tweet embedding
+## A second attempt: A custom deep network with custom tweet embedding
 
 The deep network's input layer receives a 200-dimensional topic vector from a latent semantic index (LSI) embedding described above. The early hidden layers reduce the previous layer size by half until reaching a size of 10. Next, the deep layers learn complex nonlinear relationships between the earlier learned hidden features. There are 20 deep hidden layers, each of size 10. All of the hidden layers use a ReLU activation function. The output layer of the network outputs a classification probability for each of the five categories with a softmax activation function. 
 

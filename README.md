@@ -48,16 +48,16 @@ For our damage analysis, we used data from FEMA’s post-disaster survey of 300,
 
 ## Preprocessing
 
-After we found our two datasets, we needed to combine them so that we could perform predictive analysis. The following subsections describe our methods cross-referencing our data. We ultimately wanted each geo-tagged tweet in the USA to have a damage level associated with it.
+After we found our two datasets, we needed to combine them so that we could perform predictive analysis. The following subsections describe our methods cross-referencing our data; we ultimately wanted each geo-tagged tweet in the USA to have a damage level associated with it.
 
 ### Removing tweets
-The original dataset contains 47 million tweets. First, we removed tweets which had no location data and tweets which came from outside the United States. Next, we removed all tweets which came from outside the New York City area. We only preserved tweets which came from regions affected by the Hurricane. We were left with 2 million tweets by the end of this process.
+The original dataset contains 47 million tweets. First, we removed tweets which had no location data and tweets which came from outside the United States using the _uszipcode_ Python package. Next, we removed all tweets which came from outside the tri-state area. This yielded around 2 million tweets for our "clean" dataset.
 
 ### Zip codes and damage classification
-First, we determined the zip code each tweet was from by examining the latitude and longitude of each tweet. Next, examined the FEMA dataset and looked at the types of damaged buildings by zip code. We categorized the damage level of each tweet by the worst damaged building in the zip code that tweet originated from. For example, if a tweet comes from a zip code with 6 affected buildings, 2 minorly damaged building, and 1 destroyed building, that tweet is classified as destroyed because of the single destroyed building. We chose this method of classification because we believe that it is more prudent to overestimate damage in a disaster scenario.
+First, we determined the zip code each tweet was from by examining the latitude and longitude of each tweet. Next, examined the FEMA dataset and looked at the types of damaged buildings by zip code. We categorized the damage level of each tweet by the worst damaged building in the zip code that tweet originated from. For example, if a tweet comes from a zip code with 6 affected buildings, 2 buildings labeled with minor damage, and 1 building labeled as destroyed, then that tweet is classified as destroyed (because of the single destroyed building). We chose this method of classification because we believe that it is more prudent to overestimate damage in a disaster scenario.
 
 ### Text cleanup
-We cleaned up the text of the tweets to improve the performance of our textual analysis later. We removed common words like articles and prepositions. We also removed words which only appeared once in the entire dataset. Removing uncommon words resolved most of the issues surrounding non-word text. We also set all text to lowercase.
+We removed common words like articles and prepositions and words that only appeared once in our dataset. We also set all of the text to lower case. This helped to eliminate some of the textual noise present in our dataset.
 
 ## Map Visualization
 
@@ -98,7 +98,7 @@ In order to make meaning out of our tweets, we sought the help of the Doc2Vec li
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/doc2vec.png "Doc2vec Illustration")
 
-There are a couple of advantages to the Doc2Vec approach. The first is that the semantic relationships between words are preserved; the euclidean distance between the vectorized words encapsulates the semantics behind the words themselves. Second, including a term-document matrix in the encoding preserves the ordering of sentences themselves. For example, _I walked the dog_ is a drastically different from _The dog walked I_. Including _D_ in a sentence encoding allows for the inclusion of both semantic and ordinal in a sentence [3]. 
+There are a couple of advantages to the Doc2Vec approach. The first is that the semantic relationships between words are preserved; the euclidean distance between the vectorized words encapsulates the semantics behind the words themselves. Second, including a term-document matrix in the encoding preserves the ordering of sentences themselves. For example, _I walked the dog_ is a drastically different from _The dog walked I_. Including _D_ in a sentence encoding allows for the inclusion of both semantic and ordinal information in a sentence [3]. 
 
 Naturally, there are many ways to encode _D_. Here are three: 
 

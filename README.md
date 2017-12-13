@@ -61,7 +61,7 @@ We removed common words like articles and prepositions and words that only appea
 
 ## Map Visualization
 
-Before we began creating any models, we tried to get a better understanding of our data. Below is an image of Plotly visualization tool that we created, which shows our tweets on a map. Because of computational constraints, only 20,000 tweets are plotted. Access the interactive Plotly map [here](https://plot.ly/~javiertzepeda/0.embed) (You might have to zoom in a little to get a better look). 
+Before we began creating any models, we tried to get a better understanding of our data. Below is an image of the Plotly visualization tool that we created, which shows our tweets on a map. Because of computational constraints, only 20,000 tweets are plotted. Access the interactive Plotly map [here](https://plot.ly/~javiertzepeda/0.embed) (You might have to zoom in a little to get a better look). 
 
 Each tweet marker’s color represents its respective damage classification: pink for affected, yellow for minor, orange for major, and red for destroyed. The radius of the marker represents the number of followers of the tweet’s author, and hovering over a marker shows the tweet text and damage level.
 
@@ -92,7 +92,7 @@ Next, we tried to classify the presence of damaged buildings by zip code using t
 
 ![alt text](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/images/time_series_3.png "distribution_3")
 
-You can download the pickle files for tweet distributions and damage distributions by zip code [here.](src/distribution_analysis)
+You can download the pickle files for tweet distributions and damage distributions by zip code [here.](https://github.com/mdj857/Hurricane-Sandy-Twitter-Analysis/raw/master/src/distribution_analysis)
 
 
 
